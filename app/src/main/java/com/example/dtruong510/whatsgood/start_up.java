@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 
 public class start_up extends AppCompatActivity {
 
@@ -15,10 +16,8 @@ public class start_up extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_up);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        EditText fab = (EditText) findViewById(R.id.Password);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

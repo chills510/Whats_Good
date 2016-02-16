@@ -12,20 +12,55 @@
     tools:context="com.example.dtruong510.whatsgood.start_up"
     tools:showIn="@layout/activity_start_up">
 
-    <TextView
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Whats Good"
-        android:id="@+id/textView"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="175dp" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/User"
+        android:text="User/Email"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/Logo"
+        android:src="@mipmap/logo"
+        android:scaleType="fitCenter"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/User"
+        android:layout_alignParentTop="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/Password"
+        android:layout_below="@+id/User"
+        android:layout_alignLeft="@+id/User"
+        android:layout_alignStart="@+id/User"
+        android:text="Password" />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:id="@+id/loginButton"
+        android:layout_below="@+id/Password"
+        android:layout_alignLeft="@+id/Password"
+        android:layout_alignStart="@+id/Password" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:id="@+id/registerButton"
+        android:layout_below="@+id/Password"
+        android:layout_alignRight="@+id/Password"
+        android:layout_alignEnd="@+id/Password" />
+
 </RelativeLayout>
