@@ -19,12 +19,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".registration"
-            android:label="@string/title_activity_registration"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".CreateAService"
-            android:label="@string/title_activity_create_aservice"
+            android:name=".profilePage"
+            android:label="@string/title_activity_profile_page"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

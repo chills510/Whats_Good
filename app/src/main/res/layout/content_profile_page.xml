@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.dtruong510.whatsgood.profilePage"
+    tools:showIn="@layout/activity_profile_page">
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/ProfilePicture"
+        android:src="@mipmap/ic_launcher"
+        android:scaleType="fitCenter"
+        android:layout_marginTop="39dp"
+        android:layout_below="@+id/DisplayFullName"
+        android:layout_toRightOf="@+id/ProfileReviews"
+        android:layout_toEndOf="@+id/ProfileReviews" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/DisplayFullName"
+        android:text="Jean-Pierre Gutierrez"
+        android:clickable="false"
+        android:elegantTextHeight="false"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText"
+        android:text="Name"
+        android:layout_below="@+id/ProfilePicture"
+        android:layout_alignLeft="@+id/ProfilePicture"
+        android:layout_alignStart="@+id/ProfilePicture" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ProfileDesc"
+        android:text="Description"
+        android:layout_below="@+id/editText"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ContactText"
+        android:text="Contact:"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:id="@+id/EmailButton"
+        android:layout_alignBottom="@+id/ContactText"
+        android:layout_toRightOf="@+id/ContactText"
+        android:layout_toEndOf="@+id/ContactText" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Call"
+        android:id="@+id/CallButton"
+        android:layout_alignTop="@+id/EmailButton"
+        android:layout_toRightOf="@+id/EmailButton"
+        android:layout_toEndOf="@+id/EmailButton" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Businesses"
+        android:id="@+id/ProfileBusiness"
+        android:layout_below="@+id/ProfileDesc"
+        android:layout_toRightOf="@+id/EmailButton"
+        android:layout_toEndOf="@+id/EmailButton"
+        android:layout_marginTop="78dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="VIEW REVIEWS"
+        android:id="@+id/ProfileReviews"
+        android:layout_alignTop="@+id/ProfileBusiness"
+        android:layout_toLeftOf="@+id/ProfileBusiness"
+        android:layout_toStartOf="@+id/ProfileBusiness" />
+
+
+</RelativeLayout>
