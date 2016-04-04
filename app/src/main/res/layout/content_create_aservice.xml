@@ -108,7 +108,7 @@
         android:layout_height="wrap_content"
         android:text="Add Photos"
         android:id="@+id/buttonAddPhotos"
-        android:layout_marginTop="46dp"
+        android:layout_marginTop="58dp"
         android:layout_below="@+id/editText7"
         android:layout_toRightOf="@+id/buttonCreate"
         android:layout_toEndOf="@+id/buttonCreate" />
