@@ -36,7 +36,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText"
+        android:id="@+id/etEmail"
         android:text="Name"
         android:layout_below="@+id/ProfilePicture"
         android:layout_alignLeft="@+id/ProfilePicture"
@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/ProfileDesc"
         android:text="Description"
-        android:layout_below="@+id/editText"
+        android:layout_below="@+id/etEmail"
         android:layout_centerHorizontal="true" />
 
     <EditText
