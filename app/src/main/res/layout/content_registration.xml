@@ -91,10 +91,9 @@
         android:layout_height="wrap_content"
         android:text="Register"
         android:id="@+id/buttonRegister"
-        android:layout_marginBottom="92dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/etPassword"
-        android:layout_alignEnd="@+id/etPassword" />
+        android:layout_below="@+id/editText3"
+        android:layout_toRightOf="@+id/textView"
+        android:layout_toEndOf="@+id/textView" />
 
     <Button
         android:layout_width="wrap_content"
@@ -102,7 +101,7 @@
         android:text="Cancel"
         android:id="@+id/buttonCancel"
         android:layout_alignTop="@+id/buttonRegister"
-        android:layout_alignRight="@+id/editText3"
-        android:layout_alignEnd="@+id/editText3" />
+        android:layout_alignRight="@+id/etRegister"
+        android:layout_alignEnd="@+id/etRegister" />
 
 </RelativeLayout>
