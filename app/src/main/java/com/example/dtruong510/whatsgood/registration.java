@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
+//activity page
 public class registration extends AppCompatActivity {
 
     private Button cancelBtn, registerBtn;
