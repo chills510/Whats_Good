@@ -9,20 +9,25 @@ import android.widget.Button;
 
 public class start_up extends AppCompatActivity {
 
-    private Button lButton, rButton;
+    private Button lButton, rButton, fpButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_up);
 
+        fpButton = (Button) findViewById(R.id.buttonFP);
+        fpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(start_up.this, ForgotPassword.class));
+            }
+        });
 
         lButton = (Button) findViewById(R.id.loginButton);
-        lButton.setOnClickListener(new View.OnClickListener()
-        {
+        lButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 startActivity(new Intent(start_up.this, homepage.class));
             }
         });
