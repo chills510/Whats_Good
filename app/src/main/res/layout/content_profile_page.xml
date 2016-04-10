@@ -18,86 +18,55 @@
         android:id="@+id/ProfilePicture"
         android:src="@mipmap/ic_launcher"
         android:scaleType="fitCenter"
-        android:layout_marginTop="39dp"
-        android:layout_below="@+id/DisplayFullName"
-        android:layout_toRightOf="@+id/ProfileReviews"
-        android:layout_toEndOf="@+id/ProfileReviews" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/DisplayFullName"
-        android:text="Jean-Pierre Gutierrez"
-        android:clickable="false"
-        android:elegantTextHeight="false"
+        android:layout_marginTop="42dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
-    <EditText
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/etEmail"
-        android:text="Name"
+        android:text="Edit Account Info"
+        android:id="@+id/button"
+        android:layout_marginTop="108dp"
         android:layout_below="@+id/ProfilePicture"
-        android:layout_alignLeft="@+id/ProfilePicture"
-        android:layout_alignStart="@+id/ProfilePicture" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/ProfileDesc"
-        android:text="Description"
-        android:layout_below="@+id/etEmail"
-        android:layout_centerHorizontal="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/ContactText"
-        android:text="Contact:"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Email"
-        android:id="@+id/EmailButton"
-        android:layout_alignBottom="@+id/ContactText"
-        android:layout_toRightOf="@+id/ContactText"
-        android:layout_toEndOf="@+id/ContactText" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Call"
-        android:id="@+id/CallButton"
-        android:layout_alignTop="@+id/EmailButton"
-        android:layout_toRightOf="@+id/EmailButton"
-        android:layout_toEndOf="@+id/EmailButton" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="View Businesses"
-        android:id="@+id/ProfileBusiness"
-        android:layout_below="@+id/ProfileDesc"
-        android:layout_toRightOf="@+id/EmailButton"
-        android:layout_toEndOf="@+id/EmailButton"
-        android:layout_marginTop="78dp" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="VIEW REVIEWS"
-        android:id="@+id/ProfileReviews"
-        android:layout_alignTop="@+id/ProfileBusiness"
-        android:layout_toLeftOf="@+id/ProfileBusiness"
-        android:layout_toStartOf="@+id/ProfileBusiness" />
+        android:id="@+id/button2"
+        android:layout_below="@+id/button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:text="Create A Business" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        android:id="@+id/button3"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/button2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Username"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/ProfilePicture"
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>

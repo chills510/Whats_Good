@@ -12,4 +12,5 @@
     tools:context="com.example.dtruong510.whatsgood.homepage"
     tools:showIn="@layout/activity_homepage">
 
+
 </RelativeLayout>
