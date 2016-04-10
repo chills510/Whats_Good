@@ -5,51 +5,16 @@ package com.example.dtruong510.whatsgood;
  */
 public class User {
 
-    int id;
-    int service_id;
+    //Table Name
+    public static final String TABLE = "users";
 
-    //String username = null;
-    String email = null;
-    String password = null;
+    //Table Columns
+    public static final String COLUMN_ID = "id";
+    public static final String COLUMN_EMAIL = "email";
+    public static final String COLUMN_PASSWORD = "password";
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getService_id() {
-        return service_id;
-    }
-
-    public void setService_id(int service_id) {
-        this.service_id = service_id;
-    }
-
-    /*public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-    */
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-}
+    //Data Storage
+    public int user_ID;
+    public String email;
+    public String password;
+ }

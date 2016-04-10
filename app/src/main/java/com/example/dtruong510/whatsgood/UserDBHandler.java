@@ -17,16 +17,7 @@ public class UserDBHandler extends SQLiteOpenHelper{
     private static final int DATABASE_VERSION = 1;
 
     //DATABASE NAME
-    private static final String DATABASE_NAME = "userDB.db";
-
-    //TABLE NAME
-    private static final String TABLE_USER = "users";
-
-    public static final String COLUMN_ID = "id";
-    public static final String COLUMN_SERVICE_ID = "sid";
-    //public static final String COLUMN_USERNAME = "username";
-    public static final String COLUMN_EMAIL = "email";
-    public static final String COLUMN_PASSWORD = "password";
+    private static final String DATABASE_NAME = "UserDB";
 
     public UserDBHandler(Context context)
     {
@@ -37,31 +28,21 @@ public class UserDBHandler extends SQLiteOpenHelper{
     @Override
     public void onCreate(SQLiteDatabase db)
     {
-        String CREATE_USER_TABLE = "CREATE TABLE " + TABLE_USER + "("
-                + COLUMN_ID + " INTEGER PRIMARY KEY, "
-                + COLUMN_SERVICE_ID + "INTEGER, "
-                + COLUMN_EMAIL + "STRING, "
-                + COLUMN_PASSWORD + "STRING" + ")";
+        String CREATE_UserDB_TABLE = "CREATE TABLE " + User.TABLE + "("
+                + User.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT ,"
+                + User.COLUMN_EMAIL + " TEXT, "
+                + User.COLUMN_PASSWORD + " TEXT)";
 
-        db.execSQL(CREATE_USER_TABLE);
+        db.execSQL(CREATE_UserDB_TABLE);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
     {
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_USER);
+        db.execSQL("DROP TABLE IF EXISTS " + User.TABLE);
+
+        //Creates Table Again
         onCreate(db);
     }
 
-    public void addUser(User user)
-    {
-        ContentValues values = new ContentValues();
-        values.put(COLUMN_EMAIL, user.getEmail());
-        values.put(COLUMN_PASSWORD, user.getPassword());
-
-        SQLiteDatabase db = this.getWritableDatabase();
-
-        db.insert(TABLE_USER, null, values);
-        db.close();
-    }
 }

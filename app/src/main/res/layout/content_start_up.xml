@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:ems="10"
-        android:id="@+id/User"
+        android:id="@+id/enterEmail"
         android:text="User/Email"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
@@ -30,7 +30,7 @@
         android:scaleType="fitCenter"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_above="@+id/User"
+        android:layout_above="@+id/enterEmail"
         android:layout_alignParentTop="true" />
 
     <EditText
@@ -38,10 +38,10 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
-        android:id="@+id/Password"
-        android:layout_below="@+id/User"
-        android:layout_alignLeft="@+id/User"
-        android:layout_alignStart="@+id/User"
+        android:id="@+id/enterPass"
+        android:layout_below="@+id/enterEmail"
+        android:layout_alignLeft="@+id/enterEmail"
+        android:layout_alignStart="@+id/enterEmail"
         android:text="Password" />
 
     <Button
@@ -49,9 +49,9 @@
         android:layout_height="wrap_content"
         android:text="login"
         android:id="@+id/loginButton"
-        android:layout_below="@+id/Password"
-        android:layout_alignLeft="@+id/Password"
-        android:layout_alignStart="@+id/Password" />
+        android:layout_below="@+id/enterPass"
+        android:layout_alignLeft="@+id/enterPass"
+        android:layout_alignStart="@+id/enterPass" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -59,9 +59,9 @@
         android:layout_height="wrap_content"
         android:text="register"
         android:id="@+id/registerButton"
-        android:layout_below="@+id/Password"
-        android:layout_alignRight="@+id/Password"
-        android:layout_alignEnd="@+id/Password" />
+        android:layout_below="@+id/enterPass"
+        android:layout_alignRight="@+id/enterPass"
+        android:layout_alignEnd="@+id/enterPass" />
 
     <Button
         android:layout_width="wrap_content"
