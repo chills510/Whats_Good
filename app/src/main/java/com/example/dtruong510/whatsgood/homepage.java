@@ -1,5 +1,8 @@
 package com.example.dtruong510.whatsgood;
 
+import android.app.ListActivity;
+import android.app.SearchManager;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -15,7 +18,16 @@ public class homepage extends AppCompatActivity {
         setContentView(R.layout.activity_homepage);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
     }
 
+    /*@Override
+    public void quickSearchBtn()
+    {
+        Intent intent = getIntent();
+        if(Intent.ACTION_SEARCH.equals(intent.getAction()))
+        {
+            String query = intent.getStringExtra(SearchManager.QUERY);
+            //DoSearchQueryFunction(query)
+        }
+    }*/
 }
