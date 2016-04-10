@@ -47,7 +47,7 @@
     <Button
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:text="login"
         android:id="@+id/loginButton"
         android:layout_below="@+id/Password"
         android:layout_alignLeft="@+id/Password"
@@ -57,7 +57,7 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="Register"
+        android:text="register"
         android:id="@+id/registerButton"
         android:layout_below="@+id/Password"
         android:layout_alignRight="@+id/Password"

@@ -19,8 +19,6 @@ public class registration extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
 
-        final UserDBHandler udbh = new UserDBHandler(this);
-
         cancelBtn = (Button) findViewById(R.id.buttonCancel);
         cancelBtn.setOnClickListener(new View.OnClickListener()
         {
@@ -43,19 +41,9 @@ public class registration extends AppCompatActivity {
                 confirmET = (EditText) findViewById(R.id.etConfirmPass);
                 confirm = confirmET.getText().toString();
 
-                emailET = (EditText) findViewById(R.id.etEmail);
-                email = emailET.getText().toString();
-
                 if(password.equals(confirm))
                 {
-                    User user = new User();
-
-                    user.email = email;
-                    user.password = password;
-
-                    udbh.addUser(new User());
-
-                    finish();
+                        finish();
                 }
                 else
                 {
