@@ -34,16 +34,18 @@ public class start_up extends AppCompatActivity {
                 passwordET = (EditText) findViewById(R.id.enterPass);
                 password = passwordET.getText().toString();
 
-                repo.checkIfExists(email);
+              //  repo.checkIfExists(email);
 
-                if (password.equals(repo.checkIfExists(password))) {
-                    Toast.makeText(start_up.this, "Successfully Logged In!", Toast.LENGTH_SHORT).show();
+              //  if (password.equals(repo.checkIfExists(password))) {
+                 //   Toast.makeText(start_up.this, "Successfully Logged In!", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(start_up.this, homepage.class));
                 }
-                else
-                    Toast.makeText(start_up.this, "Email Not Found", Toast.LENGTH_SHORT).show();
-            }
+              //  else
+                 //   Toast.makeText(start_up.this, "Email Not Found", Toast.LENGTH_SHORT).show();
+            //}
         });
+
+
 
         rButton = (Button) findViewById(R.id.registerButton);
         rButton.setOnClickListener(new View.OnClickListener()

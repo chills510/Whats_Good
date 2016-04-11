@@ -44,7 +44,7 @@
         android:layout_marginTop="40dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:text="Create A Business" />
+        android:text="Create A Service" />
 
     <Button
         android:layout_width="wrap_content"
