@@ -7,4 +7,8 @@
     <string name="title_activity_edit_account">editAccount</string>
     <string name="title_activity_disclaimer_page">disclaimerPage</string>
     <string name="title_activity_service_info">serviceInfo</string>
+    <string name="title_activity_homepage_navigation">homepage_navigation</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>

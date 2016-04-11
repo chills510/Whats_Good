@@ -23,10 +23,6 @@
             android:label="@string/title_activity_profile_page"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".homepage"
-            android:label="@string/title_activity_homepage"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".CreateAService"
             android:label="CreateAService"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -45,7 +41,7 @@
         <activity
             android:name=".serviceInfo"
             android:label="@string/title_activity_service_info"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
