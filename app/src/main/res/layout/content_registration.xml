@@ -27,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Email"
-        android:id="@+id/textView"
+        android:id="@+id/textOptions"
         android:layout_marginTop="79dp"
         android:textSize="25dp"
         android:layout_below="@+id/registerTitle"
@@ -40,9 +40,9 @@
         android:inputType="textEmailAddress"
         android:ems="15"
         android:id="@+id/etEmail"
-        android:layout_below="@+id/textView"
-        android:layout_alignLeft="@+id/textView"
-        android:layout_alignStart="@+id/textView" />
+        android:layout_below="@+id/textOptions"
+        android:layout_alignLeft="@+id/textOptions"
+        android:layout_alignStart="@+id/textOptions" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -92,8 +92,8 @@
         android:text="Register"
         android:id="@+id/buttonRegister"
         android:layout_below="@+id/etConfirmPass"
-        android:layout_toRightOf="@+id/textView"
-        android:layout_toEndOf="@+id/textView" />
+        android:layout_toRightOf="@+id/textOptions"
+        android:layout_toEndOf="@+id/textOptions" />
 
     <Button
         android:layout_width="wrap_content"
