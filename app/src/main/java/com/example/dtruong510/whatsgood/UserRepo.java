@@ -5,6 +5,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.hardware.usb.UsbAccessory;
+import android.nfc.Tag;
+import android.util.Log;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -27,12 +30,11 @@ public class UserRepo extends start_up{
         //Open connection to write data
         SQLiteDatabase db = dbHandler.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(User.COLUMN_ID, user.user_ID);
+        //values.put(User.COLUMN_ID, user.user_ID);
         values.put(User.COLUMN_EMAIL, user.email);
         values.put(User.COLUMN_PASSWORD, user.password);
 
         //Inserting Row
-
         long user_id = db.insert(User.TABLE, null, values);
         db.close();
         return (int) user_id;
@@ -92,8 +94,6 @@ public class UserRepo extends start_up{
                 " FROM " + User.TABLE +
                 " WHERE " + User.COLUMN_EMAIL + "=?";
 
-        int iCount = 0;
-
         User user = new User();
         Cursor cursor = db.rawQuery(query, new String[] {String.valueOf(id)});
 
@@ -111,27 +111,30 @@ public class UserRepo extends start_up{
         return user;
     }
 
-    public String checkIfExists(String userEmail)
+    public boolean checkEmailExists(String email)
     {
-        SQLiteDatabase db = dbHandler.getWritableDatabase();
-        String query = "SELECT " +
-                User.TABLE +
-                " WHERE " +
-                User.COLUMN_EMAIL +
-                " = " +
-                userEmail;
+        SQLiteDatabase db = dbHandler.getReadableDatabase();
+        Cursor cursor = db.rawQuery(String.format("SELECT %s FROM %s WHERE %s = ? LIMIT 1",
+                        User.COLUMN_EMAIL, User.TABLE, User.COLUMN_EMAIL),
+                new String[]{email});
 
-        Cursor cursor = db.rawQuery(query, new String[] {String.valueOf(User.COLUMN_EMAIL)});
-        if(cursor.getCount() < 1 )
-        {
-            cursor.close();
-            Toast.makeText(UserRepo.this, "Email Not Found", Toast.LENGTH_SHORT).show();
-        }
+        return cursor.moveToFirst();
+    }
+
+    public String checkPassword(String email)
+    {
+        SQLiteDatabase db = dbHandler.getReadableDatabase();
+        String query = "SELECT " + User.COLUMN_PASSWORD +
+                " FROM " + User.TABLE +
+                " WHERE " + User.COLUMN_EMAIL + "=?";
+
+        Cursor cursor = db.rawQuery(query, new String[] {email});
 
         cursor.moveToFirst();
-        String password = cursor.getString(cursor.getColumnIndex(User.COLUMN_PASSWORD));
+        String pass = cursor.getString(cursor.getColumnIndex(User.COLUMN_PASSWORD));
         cursor.close();
-        return password;
+        return pass;
 
     }
+
 }

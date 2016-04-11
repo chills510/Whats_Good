@@ -17,7 +17,7 @@ public class UserDBHandler extends SQLiteOpenHelper{
     private static final int DATABASE_VERSION = 1;
 
     //DATABASE NAME
-    private static final String DATABASE_NAME = "UserDB";
+    public static final String DATABASE_NAME = "UserDB.db";
 
     public UserDBHandler(Context context)
     {
@@ -28,8 +28,9 @@ public class UserDBHandler extends SQLiteOpenHelper{
     @Override
     public void onCreate(SQLiteDatabase db)
     {
+
         String CREATE_UserDB_TABLE = "CREATE TABLE " + User.TABLE + "("
-                + User.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT ,"
+                + User.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "
                 + User.COLUMN_EMAIL + " TEXT, "
                 + User.COLUMN_PASSWORD + " TEXT)";
 
