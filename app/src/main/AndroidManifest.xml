@@ -37,6 +37,10 @@
         <activity
             android:name=".editAccount"
             android:label="@string/title_activity_edit_account"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".disclaimerPage"
+            android:label="@string/title_activity_disclaimer_page"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

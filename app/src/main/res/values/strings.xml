@@ -5,4 +5,5 @@
     <string name="title_activity_homepage">homepage</string>
     <string name="title_activity_database">database</string>
     <string name="title_activity_edit_account">editAccount</string>
+    <string name="title_activity_disclaimer_page">disclaimerPage</string>
 </resources>
