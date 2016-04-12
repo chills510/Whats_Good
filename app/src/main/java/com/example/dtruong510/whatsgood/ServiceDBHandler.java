@@ -17,7 +17,7 @@ public class ServiceDBHandler extends SQLiteOpenHelper{
     private static final int DATABASE_VERSION = 1;
 
     //DATABASE NAME
-    private static final String DATABASE_NAME = "UserDB";
+    private static final String DATABASE_NAME = "ServiceDB.db";
 
     public ServiceDBHandler(Context context)
     {
