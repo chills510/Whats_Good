@@ -10,7 +10,24 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.dtruong510.whatsgood.homepage"
-    tools:showIn="@layout/activity_homepage">
+    >
 
+    <SearchView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/searchView2" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText"
+        android:layout_gravity="center_horizontal" />
+
+    <ListView
+       android:layout_width="match_parent"
+       android:layout_height="473dp"
+       android:id="@+id/theListView">
+
+   </ListView>
 
 </android.support.v4.widget.DrawerLayout>

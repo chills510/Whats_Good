@@ -6,8 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.example.dtruong510.whatsgood.CreateAService"
-    >
+
+    tools:context="com.example.dtruong510.whatsgood.profileFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,8 +28,8 @@
         android:layout_gravity="start"
         app:menu="@menu/drawer_menu"
         ></android.support.design.widget.NavigationView>
+    <include layout="@layout/content_profile_page" />
 
-    <include layout="@layout/content_create_aservice"/>
+
 
 </android.support.v4.widget.DrawerLayout>
-

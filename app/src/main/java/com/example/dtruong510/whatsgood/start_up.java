@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 public class start_up extends AppCompatActivity {
 
-    private Button lButton, rButton;
+    private Button lButton, rButton, forgotButton;
     private EditText emailET, passwordET;
     private String email, password;
 
@@ -55,6 +55,15 @@ public class start_up extends AppCompatActivity {
             public void onClick(View v)
             {
                 startActivity(new Intent(start_up.this, registration.class));
+            }
+        });
+
+        forgotButton = (Button) findViewById(R.id.buttonFP);
+        forgotButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(start_up.this, ForgotPassword.class));
             }
         });
 

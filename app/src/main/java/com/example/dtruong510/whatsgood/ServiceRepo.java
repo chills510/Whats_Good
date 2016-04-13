@@ -16,7 +16,7 @@ import java.util.Queue;
 /**
  * Created by Daniel on 4/10/2016.
  */
-public class ServiceRepo {
+public class ServiceRepo extends CreateAService{
 
     private ServiceDBHandler dbHandler;
 
@@ -106,6 +106,40 @@ public class ServiceRepo {
         return serviceList;
     }
 
+
+    public Service getServiceByName(int id){
+
+        SQLiteDatabase db = dbHandler.getReadableDatabase();
+        String query = "SELECT " +
+                Service.COLUMN_ID + ", " +
+                Service.COLUMN_SERVICE_ID + ", " +
+                Service.COLUMN_SERVICE_NAME +
+                " FROM " + Service.TABLE +
+                " WHERE " + Service.COLUMN_SERVICE_NAME + "=?";
+
+        Service service = new Service();
+        Cursor cursor = db.rawQuery(query, new String[] {String.valueOf(id)});
+
+        if(cursor.moveToFirst()){
+            do {
+                service.user_ID = cursor.getInt(cursor.getColumnIndex(Service.COLUMN_ID));
+                service.service_ID = cursor.getInt(cursor.getColumnIndex(Service.COLUMN_SERVICE_ID));
+                service.service_name = cursor.getString(cursor.getColumnIndex(Service.COLUMN_SERVICE_NAME));
+            }while (cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+        return service;
+    }
+
+    public boolean checkServiceExists(String serviceName){
+
+        SQLiteDatabase db = dbHandler.getReadableDatabase();
+        Cursor cursor = db.rawQuery(String.format("SELECT %s FROM %s WHERE %s = ? LIMIT 1",
+                Service.COLUMN_SERVICE_NAME, Service.TABLE, Service.COLUMN_SERVICE_NAME),
+                new String[]{serviceName});
+        return cursor.moveToFirst();
+    }
 
 
     }
