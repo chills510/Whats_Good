@@ -10,12 +10,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-
 public class start_up extends AppCompatActivity {
 
-    private Button lButton, rButton;
+    private Button lButton, rButton, forgotButton;
     private EditText emailET, passwordET;
-    private String email, password;
+    public String email;
+    private String password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +46,7 @@ public class start_up extends AppCompatActivity {
                 else
                     Toast.makeText(start_up.this, "Wrong Email or Password", Toast.LENGTH_SHORT).show();
             }
+
         });
 
         rButton = (Button) findViewById(R.id.registerButton);
@@ -56,6 +57,17 @@ public class start_up extends AppCompatActivity {
             {
                 startActivity(new Intent(start_up.this, registration.class));
             }
+        });
+
+        forgotButton = (Button) findViewById(R.id.forgotButton);
+        forgotButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                startActivity(new Intent(start_up.this, ForgotPassword.class));
+            }
+
         });
 
     }

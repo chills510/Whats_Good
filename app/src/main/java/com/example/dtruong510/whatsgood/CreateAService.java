@@ -13,6 +13,10 @@ public class CreateAService extends AppCompatActivity {
 
     private Button cButton, caButton;
 
+    public CreateAService(){
+
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

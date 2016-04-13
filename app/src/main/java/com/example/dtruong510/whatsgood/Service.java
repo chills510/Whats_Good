@@ -8,20 +8,20 @@ public class Service {
     public static final String TABLE = "service";
 
     //Table Columns
-    public static final String COLUMN_ID = "user id";
-    public static final String COLUMN_SERVICE_ID = "service id";
-    public static final String COLUMN_SERVICE_NAME = "email";
-    public static final String COLUMN_SERVICE_PRICE = "password";
+    public static final String COLUMN_ID = "user_id";
+    public static final String COLUMN_SERVICE_ID = "service_id";
+    public static final String COLUMN_SERVICE_NAME = "name";
+    public static final String COLUMN_SERVICE_PRICE = "price";
     public static final String COLUMN_SERVICE_HOURS = "hours";
     public static final String COLUMN_SERVICE_DESCRIPTION = "description";
-    public static final String COLUMN_SERVICE_RATING_PRICE = "price rating";
-    public static final String COLUMN_SERVICE_RATING_QUALITY = "quality rating";
+    public static final String COLUMN_SERVICE_RATING_PRICE = "price_rating";
+    public static final String COLUMN_SERVICE_RATING_QUALITY = "quality_rating";
 
     //Data Storage
     public int service_ID;
     public int user_ID;
     public String service_name;
-    public int service_price;
+    public float service_price;
     public int service_hours;
     public String service_description;
     public int service_rating_price;

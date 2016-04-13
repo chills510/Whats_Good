@@ -46,6 +46,10 @@
             android:name=".homepage"
             android:label="@string/title_activity_homepage"
             android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name=".ForgotPassword"
+            android:label="ForgotPassword"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
