@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.support.v4.app.BundleCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -42,6 +43,9 @@ public class start_up extends AppCompatActivity {
                 {
                     Toast.makeText(start_up.this, "Successfully Logged In", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(start_up.this, homepage.class));
+                    //Intent i = new Intent(start_up.this, profilePage.class)
+                            //.putExtra("passEmail", email);;
+                    //startActivity(i);
                 }
                 else
                     Toast.makeText(start_up.this, "Wrong Email or Password", Toast.LENGTH_SHORT).show();

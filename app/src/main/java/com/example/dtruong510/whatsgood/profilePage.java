@@ -7,11 +7,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class profilePage extends AppCompatActivity {
-    private Button logOutButton, createServiceButton;
-    private EditText usernameET = (EditText) findViewById(R.id.enterEmail);
-    private TextView usernameTV = (TextView) findViewById(R.id.usernameTV);
+    private Button logOutButton, createServiceButton, editButton;
+    String newUsername;
+    public EditText usernameET = (EditText) findViewById(R.id.enterEmail);
+    public TextView usernameTV = (TextView) findViewById(R.id.usernameTV);
+    Intent iEmail = getIntent();
 
 
     @Override
@@ -19,11 +22,14 @@ public class profilePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_page);
 
+        //newUsername = getIntent().getExtras().getString("passEmail");
+        //usernameTV.setText(newUsername);
 
         logOutButton = (Button) findViewById(R.id.logoutBtn);
         logOutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(profilePage.this, "Logged Out", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(profilePage.this, start_up.class));
 
             }
@@ -37,6 +43,7 @@ public class profilePage extends AppCompatActivity {
                 startActivity(new Intent(profilePage.this, disclaimerPage.class));
             }
         });
+
 
     }
 }

@@ -9,8 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.dtruong510.whatsgood.CreateAService"
-    tools:showIn="@layout/activity_create_a_service">
+    tools:context="com.example.dtruong510.whatsgood.CreateAService">
 
     <TextView
         android:layout_width="wrap_content"
@@ -22,36 +21,15 @@
         android:layout_centerHorizontal="true"
         android:textSize="25dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Name of Service"
-        android:id="@+id/etServiceName"
-        android:layout_below="@+id/etCreateService"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="35dp" />
-
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
         android:ems="15"
         android:id="@+id/editText4"
-        android:layout_below="@+id/etServiceName"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Price"
-        android:id="@+id/etPrice"
-        android:layout_below="@+id/editText4"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:hint="Name of Service"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -59,19 +37,9 @@
         android:inputType="numberDecimal"
         android:ems="15"
         android:id="@+id/editText5"
-        android:layout_below="@+id/etPrice"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Hours"
-        android:id="@+id/etHours"
-        android:layout_below="@+id/editText5"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:hint="Price"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="175dp"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -79,57 +47,32 @@
         android:inputType="textMultiLine"
         android:ems="15"
         android:id="@+id/editText6"
-        android:layout_below="@+id/etHours"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Description"
-        android:id="@+id/etDescription"
-        android:layout_below="@+id/editText6"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:ems="15"
-        android:id="@+id/editText7"
-        android:layout_below="@+id/etDescription"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:hint="Brief Description e.g. Hours"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="250dp"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add Photos"
         android:id="@+id/buttonAddPhotos"
-        android:layout_marginTop="58dp"
-        android:layout_below="@+id/editText7"
-        android:layout_toRightOf="@+id/buttonCreate"
-        android:layout_toEndOf="@+id/buttonCreate" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="340dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Create"
         android:id="@+id/buttonCreate"
-        android:layout_marginTop="60dp"
-        android:layout_below="@+id/buttonAddPhotos"
-        android:layout_toRightOf="@+id/etPrice"
-        android:layout_toEndOf="@+id/etPrice" />
+        android:layout_marginTop="450dp"
+        android:layout_marginLeft="85dp"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cancel"
         android:id="@+id/buttonCancel"
-        android:layout_alignTop="@+id/buttonCreate"
-        android:layout_toRightOf="@+id/buttonAddPhotos"
-        android:layout_toEndOf="@+id/buttonAddPhotos" />
+        android:layout_marginTop="450dp"
+        android:layout_marginLeft="185dp"/>
 
 </RelativeLayout>
