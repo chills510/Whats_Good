@@ -29,8 +29,9 @@ public class ServiceDBHandler extends SQLiteOpenHelper{
     public void onCreate(SQLiteDatabase db)
     {
         String CREATE_ServiceDB_TABLE = "CREATE TABLE " + Service.TABLE + "("
-                + User.COLUMN_ID + " INTEGER ,"
-                + Service.COLUMN_SERVICE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+
+                + Service.COLUMN_SERVICE_ID + " INTEGER PRIMARY KEY, "
+                + User.COLUMN_ID + " INTEGER, "
                 + Service.COLUMN_SERVICE_NAME + " TEXT, "
                 + Service.COLUMN_SERVICE_DESCRIPTION + " TEXT, "
                 + Service.COLUMN_SERVICE_PRICE + " FLOAT, "

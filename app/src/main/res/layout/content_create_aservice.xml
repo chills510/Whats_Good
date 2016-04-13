@@ -100,8 +100,8 @@
         android:layout_height="wrap_content"
         android:text="Add Photos"
         android:id="@+id/buttonAddPhotos"
-        android:layout_marginTop="58dp"
-        android:layout_below="@+id/descriptionET"
+        android:layout_marginTop="350dp"
+        android:layout_marginBottom="300dp"
         android:layout_toRightOf="@+id/buttonCreate"
         android:layout_toEndOf="@+id/buttonCreate" />
 
@@ -110,8 +110,8 @@
         android:layout_height="wrap_content"
         android:text="Create"
         android:id="@+id/buttonCreate"
-        android:layout_marginTop="60dp"
-        android:layout_below="@+id/buttonAddPhotos"
+        android:layout_marginTop="350dp"
+        android:layout_marginBottom="350dp"
         android:layout_toRightOf="@+id/TVPrice"
         android:layout_toEndOf="@+id/TVPrice" />
 

@@ -15,7 +15,8 @@ import android.database.sqlite.SQLiteDatabase;
 public class CreateAService extends AppCompatActivity {
     private Button cancelB, addPhotos, createButton;
     private EditText serviceNameET, priceET, hoursET, descriptionET;
-    private String serviceName, price, hours, description;
+    private String serviceName, hours, description;
+    private float price;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +36,8 @@ public class CreateAService extends AppCompatActivity {
                 serviceName = serviceNameET.getText().toString();
 
                 priceET = (EditText) findViewById(R.id.priceET);
-                price = priceET.getText().toString();
+                price = Float.valueOf(priceET.getText().toString());
+
 
                 hoursET = (EditText) findViewById(R.id.hoursET);
                 hours = hoursET.getText().toString();
@@ -49,7 +51,7 @@ public class CreateAService extends AppCompatActivity {
                 }
                 else
                     Toast.makeText(CreateAService.this, "Successfully added a service", Toast.LENGTH_SHORT).show();;
-
+                    startActivity(new Intent(CreateAService.this, homepage.class));
 
             }
         });

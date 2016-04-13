@@ -22,7 +22,7 @@ public class Service {
     public int user_ID;
     public String service_name;
     public int service_price;
-    public int service_hours;
+    public String service_hours;
     public String service_description;
     public int service_rating_price;
     public int service_rating_quality;
