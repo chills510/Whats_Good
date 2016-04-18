@@ -10,7 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class profilePage extends AppCompatActivity {
-    private Button logOutButton, createServiceButton, editButton;
+    private Button logOutButton, createServiceButton, editButton, myServicesButton;
     String newUsername;
     public EditText usernameET = (EditText) findViewById(R.id.enterEmail);
     public TextView usernameTV = (TextView) findViewById(R.id.usernameTV);
@@ -41,6 +41,14 @@ public class profilePage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(profilePage.this, disclaimerPage.class));
+            }
+        });
+
+        myServicesButton = (Button) findViewById(R.id.btMyServices);
+        myServicesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(profilePage.this, my_services.class));
             }
         });
 

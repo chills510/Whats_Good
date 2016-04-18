@@ -63,10 +63,9 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Quality"
         android:id="@+id/textView12"
-        android:layout_below="@+id/textView11"
+        android:layout_centerVertical="true"
         android:layout_alignRight="@+id/textView10"
-        android:layout_alignEnd="@+id/textView10"
-        android:layout_marginTop="36dp" />
+        android:layout_alignEnd="@+id/textView10" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -85,18 +84,18 @@
         android:layout_height="wrap_content"
         android:text="interested"
         android:id="@+id/InterestedButton"
+        android:layout_marginBottom="56dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/textView11"
-        android:layout_alignStart="@+id/textView11"
-        android:layout_marginBottom="57dp" />
+        android:layout_alignRight="@+id/textView9"
+        android:layout_alignEnd="@+id/textView9" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="review"
         android:id="@+id/ReviewButton"
-        android:layout_alignBottom="@+id/InterestedButton"
-        android:layout_toRightOf="@+id/textView8"
-        android:layout_toEndOf="@+id/textView8" />
+        android:layout_alignTop="@+id/InterestedButton"
+        android:layout_alignLeft="@+id/textView13"
+        android:layout_alignStart="@+id/textView13" />
 
 </RelativeLayout>

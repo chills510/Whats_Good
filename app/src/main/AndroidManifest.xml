@@ -45,10 +45,18 @@
         <activity
             android:name=".homepage"
             android:label="@string/title_activity_homepage"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".ForgotPassword"
             android:label="ForgotPassword"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".navigation_page"
+            android:label="@string/title_activity_navigation_page"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".my_services"
+            android:label="@string/title_activity_my_services"
             android:theme="@style/AppTheme"></activity>
     </application>
 
