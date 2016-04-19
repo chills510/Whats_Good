@@ -30,18 +30,18 @@ public class ServiceRepo {
         //Open connection to write data
         SQLiteDatabase db = dbHandler.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(Service.COLUMN_ID, service.user_ID);
+        //values.put(Service.COLUMN_ID, service.user_ID);
         //values.put(Service.COLUMN_SERVICE_ID, service.service_ID);
-        values.put(Service.COLUMN_SERVICE_DESCRIPTION, service.service_description);
+        //values.put(Service.COLUMN_SERVICE_DESCRIPTION, service.service_description);
         values.put(Service.COLUMN_SERVICE_NAME, service.service_name);
-        values.put(Service.COLUMN_SERVICE_HOURS,service.service_hours);
+        //values.put(Service.COLUMN_SERVICE_HOURS,service.service_hours);
         values.put(Service.COLUMN_SERVICE_PRICE,service.service_price);
-        values.put(Service.COLUMN_SERVICE_RATING_PRICE,service.service_rating_price);
-        values.put(Service.COLUMN_SERVICE_RATING_QUALITY,service.service_rating_quality);
+        //values.put(Service.COLUMN_SERVICE_RATING_PRICE,service.service_rating_price);
+        //values.put(Service.COLUMN_SERVICE_RATING_QUALITY,service.service_rating_quality);
 
         //Inserting Row
 
-        long user_id = db.insert(User.TABLE, null, values);
+        long user_id = db.insert(Service.TABLE, null, values);
         db.close();
         return (int) user_id;
     }
@@ -52,13 +52,13 @@ public class ServiceRepo {
         ContentValues values = new ContentValues();
 
         values.put(Service.COLUMN_ID, service.user_ID);
-        values.put(Service.COLUMN_SERVICE_ID, service.service_ID);
-        values.put(Service.COLUMN_SERVICE_DESCRIPTION, service.service_description);
+        //values.put(Service.COLUMN_SERVICE_ID, service.service_ID);
+        //values.put(Service.COLUMN_SERVICE_DESCRIPTION, service.service_description);
         values.put(Service.COLUMN_SERVICE_NAME, service.service_name);
-        values.put(Service.COLUMN_SERVICE_HOURS,service.service_hours);
+        //values.put(Service.COLUMN_SERVICE_HOURS,service.service_hours);
         values.put(Service.COLUMN_SERVICE_PRICE,service.service_price);
-        values.put(Service.COLUMN_SERVICE_RATING_PRICE,service.service_rating_price);
-        values.put(Service.COLUMN_SERVICE_RATING_QUALITY,service.service_rating_quality);
+        //values.put(Service.COLUMN_SERVICE_RATING_PRICE,service.service_rating_price);
+        //values.put(Service.COLUMN_SERVICE_RATING_QUALITY,service.service_rating_quality);
 
         db.update(Service.TABLE, values, Service.COLUMN_ID + "= ?", new String[]{String.valueOf(service.user_ID)});
         db.close();

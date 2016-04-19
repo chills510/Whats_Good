@@ -12,10 +12,7 @@
     tools:context="com.example.dtruong510.whatsgood.homepage"
     >
 
-    <SearchView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/searchView2" />
+
 
     <EditText
         android:layout_width="match_parent"

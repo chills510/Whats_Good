@@ -13,6 +13,7 @@ import android.view.ViewGroup;
  */
 public class homepageFragment extends Fragment {
 
+    //ServiceRepo repo = new ServiceRepo(this);
 
     public homepageFragment() {
         // Required empty public constructor
