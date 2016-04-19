@@ -56,7 +56,7 @@ public class homepage extends AppCompatActivity {
         drawerLayout.setDrawerListener(actionBarDrawerToggle);
 
 
-        //******SERVICE DATABASE DISPLAY******
+        /******SERVICE DATABASE DISPLAY******
 
         List<String> services = new ArrayList<>();
         ArrayList<HashMap<String, String>> servicelist = new ArrayList<>();
@@ -71,7 +71,7 @@ public class homepage extends AppCompatActivity {
         newsfeed.setClickable(true);
 
 
-        /******UNCOMMENT TO DISPLAY******/
+        ******UNCOMMENT TO DISPLAY******/
 
 
         fragmentManager = getSupportFragmentManager();
