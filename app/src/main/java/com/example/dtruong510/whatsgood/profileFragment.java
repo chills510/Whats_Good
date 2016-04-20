@@ -14,7 +14,7 @@ import android.widget.Button;
  * A simple {@link Fragment} subclass.
  */
 public class profileFragment extends Fragment{
-    private Button logOutButton, createServiceButton;
+    private Button logOutButton, createServiceButton, editProfileButton ;
 
 
     public profileFragment() {
@@ -29,6 +29,14 @@ public class profileFragment extends Fragment{
         // Inflate the layout for this fragment
         View view;
         view = inflater.inflate(R.layout.fragment_profile, container, false);
+
+        editProfileButton = (Button) view.findViewById(R.id.editAccountInfoBtn);
+        editProfileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(profileFragment.this.getActivity(), editAccount.class));
+            }
+        });
 
         logOutButton = (Button)view.findViewById(R.id.logoutBtn);
         logOutButton.setOnClickListener(new View.OnClickListener() {
