@@ -38,6 +38,7 @@ public class ServiceRepo {
         values.put(Service.COLUMN_SERVICE_PRICE,service.service_price);
         //values.put(Service.COLUMN_SERVICE_RATING_PRICE,service.service_rating_price);
         //values.put(Service.COLUMN_SERVICE_RATING_QUALITY,service.service_rating_quality);
+        values.put(Service.COLUMN_SERVICE_SALE, service.sales_check);
 
         //Inserting Row
 
@@ -59,6 +60,7 @@ public class ServiceRepo {
         values.put(Service.COLUMN_SERVICE_PRICE,service.service_price);
         //values.put(Service.COLUMN_SERVICE_RATING_PRICE,service.service_rating_price);
         //values.put(Service.COLUMN_SERVICE_RATING_QUALITY,service.service_rating_quality);
+        values.put(Service.COLUMN_SERVICE_SALE, service.sales_check);
 
         db.update(Service.TABLE, values, Service.COLUMN_ID + "= ?", new String[]{String.valueOf(service.user_ID)});
         db.close();
@@ -81,6 +83,53 @@ public class ServiceRepo {
                 Service.COLUMN_SERVICE_NAME + " , " +
                 Service.COLUMN_SERVICE_PRICE +
                 " FROM " + Service.TABLE;
+
+        ArrayList<HashMap<String, String>> serviceList = new ArrayList<HashMap<String, String>>();
+
+        Cursor cursor = db.rawQuery(query, null);
+
+        //loop through all rows and adding
+
+        if(cursor.moveToFirst())
+        {
+            do{
+                HashMap<String, String> service = new HashMap<String, String>();
+                //service.put("id", cursor.getString(cursor.getColumnIndex(Service.COLUMN_ID)));
+                //service.put("service id", cursor.getString(cursor.getColumnIndex(Service.COLUMN_SERVICE_ID)));
+                //service.put("service description", cursor.getString(cursor.getColumnIndex(Service.COLUMN_SERVICE_DESCRIPTION)));
+                service.put("service name", cursor.getString(cursor.getColumnIndex(Service.COLUMN_SERVICE_NAME)));
+                //service.put("service hours", cursor.getString(cursor.getColumnIndex(Service.COLUMN_SERVICE_HOURS)));
+                service.put("service price", cursor.getString(cursor.getColumnIndex(Service.COLUMN_SERVICE_PRICE)));
+                //service.put("service rating price", cursor.getString(cursor.getColumnIndex(Service.COLUMN_SERVICE_RATING_PRICE)));
+                //service.put("service rating quality", cursor.getString(cursor.getColumnIndex(Service.COLUMN_SERVICE_RATING_QUALITY)));
+                serviceList.add(service);
+            }while(cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+        return serviceList;
+    }
+
+    public ArrayList<HashMap<String, String>> getSalesList()
+    {
+        //Open connection to read
+        SQLiteDatabase db = dbHandler.getWritableDatabase();
+        String query = "SELECT " +
+                //Service.COLUMN_ID + ", " +
+                //Service.COLUMN_SERVICE_ID + ", " +
+                //Service.COLUMN_SERVICE_DESCRIPTION + ", " +
+                //Service.COLUMN_SERVICE_NAME + ", " +
+                //Service.COLUMN_SERVICE_HOURS + ", " +
+                //Service.COLUMN_SERVICE_PRICE + ", " +
+                //Service.COLUMN_SERVICE_RATING_PRICE + ", " +
+                //Service.COLUMN_SERVICE_RATING_QUALITY +
+
+                Service.COLUMN_SERVICE_NAME + " , " +
+                Service.COLUMN_SERVICE_PRICE +
+                " FROM " + Service.TABLE +
+                " WHERE " + Service.COLUMN_SERVICE_SALE +
+                " = " + 1;
 
         ArrayList<HashMap<String, String>> serviceList = new ArrayList<HashMap<String, String>>();
 

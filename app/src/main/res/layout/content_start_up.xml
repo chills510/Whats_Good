@@ -26,7 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/Logo"
-        android:src="@mipmap/logo"
+        android:src="@mipmap/mainpage"
         android:scaleType="fitCenter"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
@@ -68,8 +68,7 @@
         android:layout_height="wrap_content"
         android:text="Forgot Password"
         android:id="@+id/forgotButton"
-        android:layout_below="@+id/loginButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="42dp" />
+        android:layout_marginTop="400dp"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

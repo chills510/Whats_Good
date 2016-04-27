@@ -2,56 +2,71 @@ package com.example.dtruong510.whatsgood;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import java.sql.Blob;
 
 public class profilePage extends AppCompatActivity {
-    private Button logOutButton, createServiceButton, editButton, myServicesButton;
-    String newUsername;
-    public EditText usernameET = (EditText) findViewById(R.id.enterEmail);
-    public TextView usernameTV = (TextView) findViewById(R.id.usernameTV);
-    Intent iEmail = getIntent();
-
+    SessionManager manager;
+    private TextView username;
+    private Button editBtn, myServicesBtn, logoutBtn;
+    private Blob profilePic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_page);
 
-        //newUsername = getIntent().getExtras().getString("passEmail");
-        //usernameTV.setText(newUsername);
+        manager = new SessionManager();
 
-        logOutButton = (Button) findViewById(R.id.logoutBtn);
-        logOutButton.setOnClickListener(new View.OnClickListener() {
+        Bundle extras = getIntent().getExtras();
+        username = (TextView) findViewById(R.id.emailTV);
+        username.setText(extras.getString("getEmail"));
+
+
+        editBtn = (Button) findViewById(R.id.editAccount);
+        editBtn.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
-                Toast.makeText(profilePage.this, "Logged Out", Toast.LENGTH_SHORT).show();
+            public void onClick(View v)
+            {
+                startActivity(new Intent(profilePage.this, editAccount.class));
+            }
+        });
+
+        myServicesBtn = (Button) findViewById(R.id.myServices);
+
+
+
+        logoutBtn = (Button) findViewById(R.id.logoutBtn);
+        logoutBtn.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                manager.setPreferences(profilePage.this, "status", "0");
                 startActivity(new Intent(profilePage.this, start_up.class));
-
-            }
-
-        });
-
-        createServiceButton = (Button) findViewById(R.id.createServiceBtn);
-        createServiceButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(profilePage.this, disclaimerPage.class));
             }
         });
-
-        myServicesButton = (Button) findViewById(R.id.btMyServices);
-        myServicesButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(profilePage.this, my_services.class));
-            }
-        });
-
-
     }
+
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+        finish();
+        System.exit(0);
+    }
+
 }

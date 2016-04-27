@@ -6,13 +6,14 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.BundleCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 public class start_up extends AppCompatActivity {
-
+    SessionManager manager;
     private Button lButton, rButton, forgotButton;
     private EditText emailET, passwordET;
     public String email;
@@ -24,7 +25,7 @@ public class start_up extends AppCompatActivity {
         setContentView(R.layout.activity_start_up);
 
         SQLiteDatabase db = openOrCreateDatabase(UserDBHandler.DATABASE_NAME, MODE_PRIVATE, null);
-
+        manager = new SessionManager();
         final UserRepo repo = new UserRepo(this);
 
         lButton = (Button) findViewById(R.id.loginButton);
@@ -38,14 +39,16 @@ public class start_up extends AppCompatActivity {
 
                 passwordET = (EditText) findViewById(R.id.enterPass);
                 password = passwordET.getText().toString();
-
                 if(repo.checkEmailExists(email) && password.equals(repo.checkPassword(email)))
                 {
+                    manager.setPreferences(start_up.this, "status", "1");
+                    String status = manager.getPreferences(start_up.this, "status");
+                    Log.d("status", status);
+
                     Toast.makeText(start_up.this, "Successfully Logged In", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(start_up.this, homepage.class));
-                    //Intent i = new Intent(start_up.this, profilePage.class)
-                            //.putExtra("passEmail", email);;
-                    //startActivity(i);
+                    Intent intent = new Intent(start_up.this, newsfeed.class);
+                    intent.putExtra("getEmail", email);
+                    startActivity(intent);
                 }
                 else
                     Toast.makeText(start_up.this, "Wrong Email or Password", Toast.LENGTH_SHORT).show();
@@ -76,4 +79,15 @@ public class start_up extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+        finish();
+        System.exit(0);
+    }
 }
