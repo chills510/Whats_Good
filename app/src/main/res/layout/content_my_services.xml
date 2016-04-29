@@ -30,7 +30,13 @@
         android:layout_below="@+id/ibNavigation"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="122dp" />
+        android:layout_marginTop="122dp"
+        android:padding="1dp"
+        android:divider="#b5b5b5"
+        android:dividerHeight="1dp"
+        android:background="@drawable/list_border"
+        android:listSelector="@drawable/states_selector_list"
+        />
 
     <Button
         android:layout_width="90dp"
@@ -41,4 +47,5 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         />
+
 </RelativeLayout>
