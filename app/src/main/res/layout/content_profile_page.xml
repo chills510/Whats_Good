@@ -13,79 +13,48 @@
     tools:showIn="@layout/activity_profile_page">
 
     <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:id="@+id/ProfilePicture"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:id="@+id/imageView2"
         android:src="@mipmap/ic_launcher"
-        android:scaleType="fitCenter"
-        android:layout_marginTop="42dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Edit Account Info"
-        android:id="@+id/editAccountInfoBtn"
-        android:layout_marginTop="108dp"
-        android:layout_below="@+id/ProfilePicture"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        style="@style/DefButton"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/createServiceBtn"
-        android:layout_below="@+id/editAccountInfoBtn"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="40dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:text="Create A Service"
-        style="@style/DefButton"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Logout"
-        android:id="@+id/logoutBtn"
-        android:layout_marginTop="40dp"
-        android:layout_below="@+id/createServiceBtn"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        style="@style/DefButton"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Username"
-        android:editable="true"
-        android:id="@+id/usernameTV"
-        android:layout_below="@+id/ProfilePicture"
+        android:text="Email"
+        android:id="@+id/emailTV"
         android:layout_centerHorizontal="true"
-        />
+        android:layout_marginTop="120dp" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="My Services"
-        android:id="@+id/btMyServices"
-        android:layout_below="@+id/logoutBtn"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:text="Edit Account Info"
+        android:id="@+id/editAccount"
+        android:layout_below="@+id/emailTV"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        style="@style/DefButton"/>
+        android:layout_marginTop="60dp" />
 
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:text="My Services"
+        android:id="@+id/myServices"
+        android:layout_below="@+id/editAccount"
+        android:layout_alignLeft="@+id/editAccount"
+        android:layout_alignStart="@+id/editAccount"
+        android:layout_marginTop="25dp"/>
 
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:text="Logout"
+        android:id="@+id/logoutBtn"
+        android:layout_below="@+id/myServices"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"/>
 </RelativeLayout>

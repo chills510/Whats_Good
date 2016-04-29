@@ -24,16 +24,6 @@ public class registration extends AppCompatActivity {
         final UserRepo repo = new UserRepo(this);
         final User user = new User();
 
-        cancelBtn = (Button) findViewById(R.id.buttonCancel);
-        cancelBtn.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                finish();
-            }
-        });
-
         registerBtn = (Button) findViewById(R.id.buttonRegister);
         registerBtn.setOnClickListener(new View.OnClickListener()
         {
@@ -84,6 +74,16 @@ public class registration extends AppCompatActivity {
                     toast.show();
                 }
 
+            }
+        });
+
+        cancelBtn = (Button) findViewById(R.id.buttonCancel);
+        cancelBtn.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                finish();
             }
         });
     }

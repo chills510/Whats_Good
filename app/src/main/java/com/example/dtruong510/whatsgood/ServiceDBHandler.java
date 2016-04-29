@@ -17,7 +17,7 @@ public class ServiceDBHandler extends SQLiteOpenHelper{
     private static final int DATABASE_VERSION = 1;
 
     //DATABASE NAME
-    private static final String DATABASE_NAME = "WhatsGoodDB.db";
+    private static final String DATABASE_NAME = "WhatsGoodDBService.db";
 
     public ServiceDBHandler(Context context)
     {
@@ -29,15 +29,15 @@ public class ServiceDBHandler extends SQLiteOpenHelper{
     public void onCreate(SQLiteDatabase db)
     {
         String CREATE_ServiceDB_TABLE = "CREATE TABLE " + Service.TABLE + "("
-
-                + Service.COLUMN_SERVICE_ID + " INTEGER PRIMARY KEY, "
                 + User.COLUMN_ID + " INTEGER, "
+                + Service.COLUMN_SERVICE_ID + " INTEGER PRIMARY KEY, "
                 + Service.COLUMN_SERVICE_NAME + " TEXT, "
                 + Service.COLUMN_SERVICE_DESCRIPTION + " TEXT, "
                 + Service.COLUMN_SERVICE_PRICE + " FLOAT, "
                 + Service.COLUMN_SERVICE_HOURS + " TEXT, "
                 + Service.COLUMN_SERVICE_RATING_PRICE + " INTEGER, "
-                + Service.COLUMN_SERVICE_RATING_QUALITY + " INTEGER)";
+                + Service.COLUMN_SERVICE_RATING_QUALITY + " INTEGER, "
+                + Service.COLUMN_SERVICE_SALE + " BOOLEAN)";
 
         db.execSQL(CREATE_ServiceDB_TABLE);
     }

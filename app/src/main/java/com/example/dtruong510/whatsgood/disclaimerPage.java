@@ -30,7 +30,7 @@ public class disclaimerPage extends AppCompatActivity {
             public void onClick(View v)
             {
                 Toast.makeText(disclaimerPage.this, "Thank You For Understanding!", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(disclaimerPage.this, CreateAService.class));
+                startActivity(new Intent(disclaimerPage.this, createService.class));
             }
         });
 
@@ -41,7 +41,7 @@ public class disclaimerPage extends AppCompatActivity {
             public void onClick(View v)
             {
                 Toast.makeText(disclaimerPage.this, "We're Sorry You Disagree!", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(disclaimerPage.this, homepage.class));
+                startActivity(new Intent(disclaimerPage.this, newsfeed.class));
             }
         });
     }
