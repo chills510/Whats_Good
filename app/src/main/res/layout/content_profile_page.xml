@@ -37,7 +37,8 @@
         android:id="@+id/editAccount"
         android:layout_below="@+id/emailTV"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp" />
+        android:layout_marginTop="60dp"
+        style="@style/DefButton"/>
 
     <Button
         android:layout_width="300dp"
@@ -47,7 +48,8 @@
         android:layout_below="@+id/editAccount"
         android:layout_alignLeft="@+id/editAccount"
         android:layout_alignStart="@+id/editAccount"
-        android:layout_marginTop="25dp"/>
+        android:layout_marginTop="25dp"
+        style="@style/DefButton"/>
 
     <Button
         android:layout_width="300dp"
@@ -56,5 +58,6 @@
         android:id="@+id/logoutBtn"
         android:layout_below="@+id/myServices"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"/>
+        android:layout_marginTop="25dp"
+        style="@style/DefButton"/>
 </RelativeLayout>
