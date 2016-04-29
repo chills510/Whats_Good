@@ -26,7 +26,12 @@
     <ListView
         android:layout_width="match_parent"
         android:layout_height="473dp"
-        android:id="@+id/theListView">
+        android:id="@+id/theListView"
+        android:padding="1dp"
+        android:divider="#b5b5b5"
+        android:dividerHeight="1dp"
+        android:background="@drawable/list_border"
+        android:listSelector="@drawable/states_selector_list">
 
     </ListView>
 
