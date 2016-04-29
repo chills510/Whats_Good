@@ -62,7 +62,8 @@
         android:layout_marginTop="61dp"
         android:layout_below="@+id/textView6"
         android:layout_toLeftOf="@+id/textView3"
-        android:layout_toStartOf="@+id/textView3" />
+        android:layout_toStartOf="@+id/textView3"
+        style="@style/DefButton"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -71,7 +72,8 @@
         android:id="@+id/disagreeButton"
         android:layout_alignTop="@+id/agreeButton"
         android:layout_toRightOf="@+id/textView3"
-        android:layout_toEndOf="@+id/textView3" />
+        android:layout_toEndOf="@+id/textView3"
+        style="@style/DefButton"/>
 
     <TextView
         android:layout_width="wrap_content"

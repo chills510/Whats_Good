@@ -6,7 +6,7 @@
         <item name="colorPrimary">@color/background</item>
         <item name="colorPrimaryDark">@color/text</item>
         <item name="colorAccent">@color/buttons</item>
-        <item name="android:windowBackground">#F8B195</item>
+        <item name="android:windowBackground">#EAFDE6</item>
 
         <item name="android:editTextColor">#355C7D</item>
         <item name="android:textColor">#355C7D</item>

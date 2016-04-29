@@ -51,10 +51,11 @@
         android:id="@+id/loginButton"
         android:layout_below="@+id/enterPass"
         android:layout_alignLeft="@+id/enterPass"
-        android:layout_alignStart="@+id/enterPass" />
+        android:layout_alignStart="@+id/enterPass"
+        style="@style/DefButton"/>
 
     <Button
-        style="?android:attr/buttonStyleSmall"
+        style="@style/DefButton"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:text="register"
