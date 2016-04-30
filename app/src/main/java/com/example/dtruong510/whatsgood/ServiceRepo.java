@@ -99,7 +99,7 @@ public class ServiceRepo {
                 //service.put("service description", cursor.getString(cursor.getColumnIndex(Service.COLUMN_SERVICE_DESCRIPTION)));
                 service.put("service name", cursor.getString(cursor.getColumnIndex(Service.COLUMN_SERVICE_NAME)));
                 //service.put("service hours", cursor.getString(cursor.getColumnIndex(Service.COLUMN_SERVICE_HOURS)));
-                service.put("service price", cursor.getString(cursor.getColumnIndex(Service.COLUMN_SERVICE_PRICE)));
+                //service.put("service price", cursor.getString(cursor.getColumnIndex(Service.COLUMN_SERVICE_PRICE)));
                 //service.put("service rating price", cursor.getString(cursor.getColumnIndex(Service.COLUMN_SERVICE_RATING_PRICE)));
                 //service.put("service rating quality", cursor.getString(cursor.getColumnIndex(Service.COLUMN_SERVICE_RATING_QUALITY)));
                 serviceList.add(service);
