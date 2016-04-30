@@ -149,7 +149,7 @@ public class newsfeed extends AppCompatActivity {
                 String[] from = {"service name", "service price"};
                 int[] to = {R.id.service_name, R.id.price_value};
 
-                ListView newsfeed = (ListView) findViewById(R.id.newsfeed);
+                final ListView newsfeed = (ListView) findViewById(R.id.newsfeed);
 
                 //TextView textView = (TextView) findViewById(R.id.service_name);
                 //TextView textView1 = (TextView) findViewById(R.id.price_value);
@@ -163,10 +163,10 @@ public class newsfeed extends AppCompatActivity {
                 newsfeed.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        data = (String) parent.getItemAtPosition(position);
-                        Intent intent = new Intent(newsfeed.this, serviceInfo.class);
-                        intent.putExtra("servicedata", data);
-                        startActivity(intent);
+                        //data = (String) parent.getItemAtPosition(position);
+                        //Intent intent = new Intent(newsfeed.this, serviceInfo.class);
+                        //intent.putExtra("servicedata", data);
+                        startActivity(new Intent(newsfeed.this, serviceInfo.class));
                     }
                 });
             }

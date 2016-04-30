@@ -21,9 +21,9 @@ public class serviceInfo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_service_info);
 
-        Bundle serviceinfo = getIntent().getExtras();
-        description = (TextView) findViewById(R.id.descriptionTV);
-        description.setText(serviceinfo.getString("servicedata"));
+        //Bundle serviceinfo = getIntent().getExtras();
+        //description = (TextView) findViewById(R.id.descriptionTV);
+        //description.setText(serviceinfo.getString("servicedata"));
 
         cancel = (Button) findViewById(R.id.cancelBtn);
         if (cancel != null) {
