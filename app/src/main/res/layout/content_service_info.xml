@@ -12,15 +12,13 @@
     tools:context="com.example.dtruong510.whatsgood.serviceInfo"
     tools:showIn="@layout/activity_service_info">
 
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Business Name"
-        android:id="@+id/textView8"
-        android:layout_marginTop="25dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginStart="10dp"
+        android:text="Service Name"
+        android:textSize="25dp"
+        android:id="@+id/serviceNameTV"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -28,74 +26,76 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Hours | Price"
-        android:id="@+id/textView9"
-        android:layout_below="@+id/textView8"
-        android:layout_alignLeft="@+id/textView8"
-        android:layout_alignStart="@+id/textView8" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Description"
-        android:id="@+id/textView10"
-        android:layout_below="@+id/textView9"
-        android:layout_alignLeft="@+id/textView9"
-        android:layout_alignStart="@+id/textView9"
-        android:layout_marginTop="37dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="This is a business that focuses on giving the freshest cuts in the business"
-        android:id="@+id/textView11"
-        android:layout_below="@+id/textView10"
-        android:layout_alignLeft="@+id/textView10"
-        android:layout_alignStart="@+id/textView10"
-        android:layout_marginTop="22dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Quality"
-        android:id="@+id/textView12"
-        android:layout_centerVertical="true"
-        android:layout_alignRight="@+id/textView10"
-        android:layout_alignEnd="@+id/textView10" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Price"
-        android:id="@+id/textView13"
-        android:layout_marginLeft="64dp"
-        android:layout_marginStart="64dp"
-        android:layout_alignTop="@+id/textView12"
-        android:layout_toRightOf="@+id/textView8"
-        android:layout_toEndOf="@+id/textView8" />
+        android:textSize="17dp"
+        android:id="@+id/priceTV"
+        android:layout_below="@+id/serviceNameTV"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
-    <Button
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="interested"
-        android:id="@+id/InterestedButton"
-        android:layout_marginBottom="56dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/textView9"
-        android:layout_alignEnd="@+id/textView9" />
+        android:text="Description"
+        android:id="@+id/descriptionTV"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="75dp" />
 
-    <Button
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="review"
-        android:id="@+id/ReviewButton"
-        android:layout_alignTop="@+id/InterestedButton"
-        android:layout_alignLeft="@+id/textView13"
-        android:layout_alignStart="@+id/textView13" />
+        android:text="Quality Rating"
+        android:id="@+id/qualityRateTV"
+        android:layout_toRightOf="@+id/priceTV"
+        android:layout_toEndOf="@+id/priceTV"
+        android:layout_marginTop="230dp"
+        android:layout_marginLeft="30dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price Rating"
+        android:id="@+id/priceRateTV"
+        android:layout_alignTop="@+id/qualityRateTV"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/descriptionTV"
+        android:layout_marginRight="75dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="%"
+        android:id="@+id/qualityPercent"
+        android:layout_below="@+id/qualityRateTV"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="10dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="%"
+        android:id="@+id/pricePercent"
+        android:layout_below="@+id/priceRateTV"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:layout_width="125dp"
+        android:layout_height="50dp"
+        android:text="Interested"
+        android:id="@+id/interestBtn"
+        android:layout_marginTop="450dp"
+        android:layout_marginLeft="45dp"/>
+
+    <Button
+        android:layout_width="125dp"
+        android:layout_height="50dp"
+        android:text="Cancel"
+        android:id="@+id/cancelBtn"
+        android:layout_marginTop="450dp"
+        android:layout_marginLeft="190dp"/>
 
 </RelativeLayout>

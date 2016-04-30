@@ -20,13 +20,12 @@ public class ServiceRepo {
 
     private ServiceDBHandler dbHandler;
 
-    public ServiceRepo(Context context)
-    {
+    public ServiceRepo(Context context) {
         dbHandler = new ServiceDBHandler(context);
     }
 
-    public int insert(Service service)
-    {
+
+    public int insert(Service service) {
         //Open connection to write data
         SQLiteDatabase db = dbHandler.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -35,7 +34,7 @@ public class ServiceRepo {
         //values.put(Service.COLUMN_SERVICE_DESCRIPTION, service.service_description);
         values.put(Service.COLUMN_SERVICE_NAME, service.service_name);
         //values.put(Service.COLUMN_SERVICE_HOURS,service.service_hours);
-        values.put(Service.COLUMN_SERVICE_PRICE,service.service_price);
+        values.put(Service.COLUMN_SERVICE_PRICE, service.service_price);
         //values.put(Service.COLUMN_SERVICE_RATING_PRICE,service.service_rating_price);
         //values.put(Service.COLUMN_SERVICE_RATING_QUALITY,service.service_rating_quality);
         values.put(Service.COLUMN_SERVICE_SALE, service.sales_check);
@@ -47,8 +46,7 @@ public class ServiceRepo {
         return (int) user_id;
     }
 
-    public void update(Service service)
-    {
+    public void update(Service service) {
         SQLiteDatabase db = dbHandler.getWritableDatabase();
         ContentValues values = new ContentValues();
 
@@ -57,7 +55,7 @@ public class ServiceRepo {
         //values.put(Service.COLUMN_SERVICE_DESCRIPTION, service.service_description);
         values.put(Service.COLUMN_SERVICE_NAME, service.service_name);
         //values.put(Service.COLUMN_SERVICE_HOURS,service.service_hours);
-        values.put(Service.COLUMN_SERVICE_PRICE,service.service_price);
+        values.put(Service.COLUMN_SERVICE_PRICE, service.service_price);
         //values.put(Service.COLUMN_SERVICE_RATING_PRICE,service.service_rating_price);
         //values.put(Service.COLUMN_SERVICE_RATING_QUALITY,service.service_rating_quality);
         values.put(Service.COLUMN_SERVICE_SALE, service.sales_check);
@@ -66,14 +64,13 @@ public class ServiceRepo {
         db.close();
     }
 
-    public ArrayList<HashMap<String, String>> getServiceList()
-    {
+    public ArrayList<HashMap<String, String>> getServiceList() {
         //Open connection to read
         SQLiteDatabase db = dbHandler.getWritableDatabase();
         String query = "SELECT " +
                 //Service.COLUMN_ID + ", " +
                 //Service.COLUMN_SERVICE_ID + ", " +
-                //Service.COLUMN_SERVICE_DESCRIPTION + ", " +
+                Service.COLUMN_SERVICE_DESCRIPTION + ", " +
                 //Service.COLUMN_SERVICE_NAME + ", " +
                 //Service.COLUMN_SERVICE_HOURS + ", " +
                 //Service.COLUMN_SERVICE_PRICE + ", " +
@@ -90,20 +87,19 @@ public class ServiceRepo {
 
         //loop through all rows and adding
 
-        if(cursor.moveToFirst())
-        {
-            do{
+        if (cursor.moveToFirst()) {
+            do {
                 HashMap<String, String> service = new HashMap<String, String>();
                 //service.put("id", cursor.getString(cursor.getColumnIndex(Service.COLUMN_ID)));
                 //service.put("service id", cursor.getString(cursor.getColumnIndex(Service.COLUMN_SERVICE_ID)));
-                //service.put("service description", cursor.getString(cursor.getColumnIndex(Service.COLUMN_SERVICE_DESCRIPTION)));
+                service.put("service description", cursor.getString(cursor.getColumnIndex(Service.COLUMN_SERVICE_DESCRIPTION)));
                 service.put("service name", cursor.getString(cursor.getColumnIndex(Service.COLUMN_SERVICE_NAME)));
                 //service.put("service hours", cursor.getString(cursor.getColumnIndex(Service.COLUMN_SERVICE_HOURS)));
                 service.put("service price", cursor.getString(cursor.getColumnIndex(Service.COLUMN_SERVICE_PRICE)));
                 //service.put("service rating price", cursor.getString(cursor.getColumnIndex(Service.COLUMN_SERVICE_RATING_PRICE)));
                 //service.put("service rating quality", cursor.getString(cursor.getColumnIndex(Service.COLUMN_SERVICE_RATING_QUALITY)));
                 serviceList.add(service);
-            }while(cursor.moveToNext());
+            } while (cursor.moveToNext());
         }
 
         cursor.close();
@@ -111,8 +107,7 @@ public class ServiceRepo {
         return serviceList;
     }
 
-    public ArrayList<HashMap<String, String>> getSalesList()
-    {
+    public ArrayList<HashMap<String, String>> getSalesList() {
         //Open connection to read
         SQLiteDatabase db = dbHandler.getWritableDatabase();
         String query = "SELECT " +
@@ -137,9 +132,8 @@ public class ServiceRepo {
 
         //loop through all rows and adding
 
-        if(cursor.moveToFirst())
-        {
-            do{
+        if (cursor.moveToFirst()) {
+            do {
                 HashMap<String, String> service = new HashMap<String, String>();
                 //service.put("id", cursor.getString(cursor.getColumnIndex(Service.COLUMN_ID)));
                 //service.put("service id", cursor.getString(cursor.getColumnIndex(Service.COLUMN_SERVICE_ID)));
@@ -150,7 +144,7 @@ public class ServiceRepo {
                 //service.put("service rating price", cursor.getString(cursor.getColumnIndex(Service.COLUMN_SERVICE_RATING_PRICE)));
                 //service.put("service rating quality", cursor.getString(cursor.getColumnIndex(Service.COLUMN_SERVICE_RATING_QUALITY)));
                 serviceList.add(service);
-            }while(cursor.moveToNext());
+            } while (cursor.moveToNext());
         }
 
         cursor.close();
@@ -158,7 +152,7 @@ public class ServiceRepo {
         return serviceList;
     }
 
-    public Service getServiceByName(String name){
+    public Service getServiceByName(String name) {
 
         SQLiteDatabase db = dbHandler.getReadableDatabase();
         String query = "SELECT " +
@@ -169,14 +163,14 @@ public class ServiceRepo {
                 " WHERE " + Service.COLUMN_SERVICE_NAME + "=?";
 
         Service service = new Service();
-        Cursor cursor = db.rawQuery(query, new String[] {name});
+        Cursor cursor = db.rawQuery(query, new String[]{name});
 
-        if(cursor.moveToFirst()){
+        if (cursor.moveToFirst()) {
             do {
                 service.user_ID = cursor.getInt(cursor.getColumnIndex(Service.COLUMN_ID));
                 service.service_ID = cursor.getInt(cursor.getColumnIndex(Service.COLUMN_SERVICE_ID));
                 service.service_name = cursor.getString(cursor.getColumnIndex(Service.COLUMN_SERVICE_NAME));
-            }while (cursor.moveToNext());
+            } while (cursor.moveToNext());
         }
         cursor.close();
         db.close();
@@ -192,28 +186,25 @@ public class ServiceRepo {
         return cursor.moveToFirst();
     }
 
-    public Service getServiceById(int serviceID)
-    {
+    public Service getServiceById(int serviceID) {
         SQLiteDatabase db = dbHandler.getReadableDatabase();
         String query = "SELECT * FROM " +
                 Service.TABLE + " WHERE " +
                 Service.COLUMN_SERVICE_ID + " =?";
 
         Service service = new Service();
-        Cursor cursor = db.rawQuery(query, new String[] {String.valueOf(serviceID)});
+        Cursor cursor = db.rawQuery(query, new String[]{String.valueOf(serviceID)});
 
-        if(cursor.moveToFirst())
-        {
-            do
-            {
+        if (cursor.moveToFirst()) {
+            do {
                 service.user_ID = cursor.getInt(cursor.getColumnIndex(Service.COLUMN_ID));
                 service.service_ID = cursor.getInt(cursor.getColumnIndex(Service.COLUMN_SERVICE_ID));
                 service.service_name = cursor.getString(cursor.getColumnIndex(Service.COLUMN_SERVICE_NAME));
                 service.service_description = cursor.getString(cursor.getColumnIndex(Service.COLUMN_SERVICE_DESCRIPTION));
-                service.service_price = cursor.getFloat(cursor.getColumnIndex(Service.COLUMN_SERVICE_PRICE));
+                service.service_price = cursor.getString(cursor.getColumnIndex(Service.COLUMN_SERVICE_PRICE));
                 service.service_rating_price = cursor.getInt(cursor.getColumnIndex(Service.COLUMN_SERVICE_RATING_PRICE));
                 service.service_rating_quality = cursor.getInt(cursor.getColumnIndex(Service.COLUMN_SERVICE_RATING_QUALITY));
-            }while (cursor.moveToNext());
+            } while (cursor.moveToNext());
         }
 
         cursor.close();
@@ -221,8 +212,7 @@ public class ServiceRepo {
         return service;
     }
 
-    public User getUserByService(int userID)
-    {
+    public User getUserByService(int userID) {
         SQLiteDatabase db = dbHandler.getReadableDatabase();
         String query = "SELECT " +
                 User.COLUMN_EMAIL + " FROM " +
@@ -233,15 +223,13 @@ public class ServiceRepo {
                 Service.COLUMN_ID;
 
         User user = new User();
-        Cursor cursor = db.rawQuery(query, new String[] {String.valueOf(userID)});
+        Cursor cursor = db.rawQuery(query, new String[]{String.valueOf(userID)});
 
-        if(cursor.moveToFirst())
-        {
-            do
-            {
+        if (cursor.moveToFirst()) {
+            do {
                 user.user_ID = cursor.getInt(cursor.getColumnIndex(User.COLUMN_ID));
                 user.email = cursor.getString(cursor.getColumnIndex(User.COLUMN_EMAIL));
-            }while(cursor.moveToNext());
+            } while (cursor.moveToNext());
         }
 
         cursor.close();
@@ -249,5 +237,30 @@ public class ServiceRepo {
         return user;
     }
 
+    public Service getServiceName(int service_id)
+    {
+        SQLiteDatabase db = dbHandler.getReadableDatabase();
+        String query = "SELECT " +
+                Service.COLUMN_SERVICE_NAME + " FROM " +
+                Service.TABLE + " WHERE " +
+                Service.COLUMN_SERVICE_ID + " = " +
+                service_id;
+
+        Service service = new Service();
+        Cursor cursor = db.rawQuery(query, new String[]{String.valueOf(service_id)});
+
+        if(cursor.moveToFirst())
+        {
+            do
+            {
+                service.service_ID = cursor.getInt(cursor.getColumnIndex(Service.COLUMN_SERVICE_ID));
+            }while(cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+        return service;
+
+    }
 
 }

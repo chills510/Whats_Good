@@ -13,6 +13,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
+import android.widget.SimpleAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -22,17 +24,20 @@ import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
+import java.io.EOFException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 
 public class newsfeed extends AppCompatActivity {
     ServiceRepo repo = new ServiceRepo(this);
+    Service serviceClass = new Service();
 
     private ImageButton logoBtn, salesBtn, serviceBtn, refreshBtn;
     public TextView username;
     private SearchView searchbtn;
-    public String searchWord, passEmail;
+    public String searchWord, passEmail, data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +49,7 @@ public class newsfeed extends AppCompatActivity {
         username.setText(extras.getString("getEmail"));
 
 
-        List<String> services = new ArrayList<>();
+        //List<String> services = new ArrayList<>();
 
 
         searchbtn = (SearchView) findViewById(R.id.search);
@@ -57,14 +62,34 @@ public class newsfeed extends AppCompatActivity {
             {
                 ArrayList<HashMap<String, String>> servicelist = new ArrayList<>();
 
+
                 servicelist.addAll(repo.getServiceList());
 
-                if(servicelist != null) {
+                    if(servicelist != null)
+                    {
+
+                    HashMap<String, String> listofservice = new HashMap<String, String>();
+
+                    String servicename = Service.COLUMN_SERVICE_NAME;
+                    String serviceprice = Service.COLUMN_SERVICE_PRICE;
+
+                    listofservice.put("service name", servicename);
+                    listofservice.put("sevice price", serviceprice);
+
+                    servicelist.add(listofservice);
+
+                    }
+                    String[] from = {"service name", "service price"};
+                    int[] to = {R.id.service_name,R.id.price_value};
 
                     ListView newsfeed = (ListView) findViewById(R.id.newsfeed);
+                    //TextView textView = (TextView) findViewById(R.id.service_name);
+                    //TextView textView1 = (TextView) findViewById(R.id.price_value);
 
-                    ArrayAdapter<HashMap<String, String>> arrayAdapter = new ArrayAdapter<>(newsfeed.this, android.R.layout.simple_list_item_1, servicelist);
-                    newsfeed.setAdapter(arrayAdapter);
+                    //ArrayAdapter<HashMap<String, String>> arrayAdapter = new ArrayAdapter<>(newsfeed.this, android.R.layout.simple_list_item_1, R.id.service_name, servicelist);
+                    //ArrayAdapter<HashMap<String, String>> arrayAdapter = new ArrayAdapter<>(newsfeed.this, R.layout.content_newsfeed_display, from, to);
+                    ListAdapter adapter = new SimpleAdapter(newsfeed.this, servicelist, R.layout.content_newsfeed_display, from, to);
+                    newsfeed.setAdapter(adapter);
                     newsfeed.setClickable(true);
 
                     newsfeed.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -74,7 +99,7 @@ public class newsfeed extends AppCompatActivity {
                         }
                     });
                 }
-            }
+            //}
         });
 
         username = (TextView) findViewById(R.id.ProfileBtn);
@@ -103,30 +128,49 @@ public class newsfeed extends AppCompatActivity {
         salesBtn.setOnClickListener(new View.OnClickListener()
         {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 ArrayList<HashMap<String, String>> saleslist = new ArrayList<>();
 
                 saleslist.addAll(repo.getSalesList());
 
-                if(saleslist != null) {
+                if (saleslist != null) {
 
-                    ListView newsfeed = (ListView) findViewById(R.id.newsfeed);
+                    HashMap<String, String> listofservice = new HashMap<String, String>();
 
-                    ArrayAdapter<HashMap<String, String>> arrayAdapter = new ArrayAdapter<>(newsfeed.this, android.R.layout.simple_list_item_1, saleslist);
-                    newsfeed.setAdapter(arrayAdapter);
-                    newsfeed.setClickable(true);
+                    String servicename = Service.COLUMN_SERVICE_NAME;
+                    String serviceprice = Service.COLUMN_SERVICE_PRICE;
 
-                    newsfeed.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                        @Override
-                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            startActivity(new Intent(newsfeed.this, serviceInfo.class));
-                        }
-                    });
+                    listofservice.put("service name", servicename);
+                    listofservice.put("sevice price", serviceprice);
+
+                    saleslist.add(listofservice);
                 }
+
+                String[] from = {"service name", "service price"};
+                int[] to = {R.id.service_name, R.id.price_value};
+
+                ListView newsfeed = (ListView) findViewById(R.id.newsfeed);
+
+                //TextView textView = (TextView) findViewById(R.id.service_name);
+                //TextView textView1 = (TextView) findViewById(R.id.price_value);
+
+                //ArrayAdapter<HashMap<String, String>> arrayAdapter = new ArrayAdapter<>(newsfeed.this, android.R.layout.simple_list_item_1, R.id.service_name, servicelist);
+                //ArrayAdapter<HashMap<String, String>> arrayAdapter = new ArrayAdapter<>(newsfeed.this, R.layout.content_newsfeed_display, from, to);
+                ListAdapter adapter = new SimpleAdapter(newsfeed.this, saleslist, R.layout.content_newsfeed_display, from, to);
+                newsfeed.setAdapter(adapter);
+                newsfeed.setClickable(true);
+
+                newsfeed.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        data = (String) parent.getItemAtPosition(position);
+                        Intent intent = new Intent(newsfeed.this, serviceInfo.class);
+                        intent.putExtra("servicedata", data);
+                        startActivity(intent);
+                    }
+                });
             }
         });
     }
 
 }
-

@@ -17,7 +17,7 @@ public class createService extends AppCompatActivity {
     private Button cButton, caButton;
     private CheckBox salesCheck;
     private EditText serviceET, descriptionET, priceET;
-    private float priceVal;
+    private String priceVal;
     private String serviceNameText, descriptionText;
     private int _ServiceID = 0;
 
@@ -40,7 +40,12 @@ public class createService extends AppCompatActivity {
                 descriptionText = descriptionET.getText().toString();
 
                 priceET = (EditText) findViewById(R.id.priceET);
-                priceVal = Float.parseFloat(priceET.getText().toString());
+                priceVal = priceET.getText().toString();
+
+                if(priceVal == null)
+                {
+                    priceVal = "Free";
+                }
 
                 salesCheck = (CheckBox) findViewById(R.id.salesBox);
                 if(salesCheck.isChecked())

@@ -33,7 +33,7 @@ public class ServiceDBHandler extends SQLiteOpenHelper{
                 + Service.COLUMN_SERVICE_ID + " INTEGER PRIMARY KEY, "
                 + Service.COLUMN_SERVICE_NAME + " TEXT, "
                 + Service.COLUMN_SERVICE_DESCRIPTION + " TEXT, "
-                + Service.COLUMN_SERVICE_PRICE + " FLOAT, "
+                + Service.COLUMN_SERVICE_PRICE + " TEXT, "
                 + Service.COLUMN_SERVICE_HOURS + " TEXT, "
                 + Service.COLUMN_SERVICE_RATING_PRICE + " INTEGER, "
                 + Service.COLUMN_SERVICE_RATING_QUALITY + " INTEGER, "

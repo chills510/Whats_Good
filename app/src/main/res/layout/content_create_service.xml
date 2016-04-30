@@ -35,6 +35,7 @@
         android:layout_height="50dp"
         android:id="@+id/priceET"
         android:hint="Price"
+        android:text="$"
         android:layout_below="@+id/nameET"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp" />
@@ -72,7 +73,8 @@
         android:text="Cancel"
         android:id="@+id/cancelBtn"
         android:layout_below="@+id/photoBtn"
-        android:layout_marginLeft="180dp"
+        android:layout_toRightOf="@+id/createBtn"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="25dp"/>
 
     <CheckBox
