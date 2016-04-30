@@ -40,14 +40,14 @@ public class newsfeed extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_newsfeed);
 
-         //String[] services = {"Hair Cut's on Demand", "Carpet Cleaners", "Toyota Corolla For Sale", "iPhone Repair", "Ride to Long Beach",
-         //   "Landscaping for Cheap", "Couch For Sale"};
+        String[] services = {"Hair Cut's on Demand", "Carpet Cleaners", "Toyota Corolla For Sale", "iPhone Repair", "Ride to Long Beach",
+        "Landscaping for Cheap", "Couch For Sale"};
 
-        //ListAdapter theAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,
-        //        services);
-        //ListView newsfeed = (ListView) findViewById(R.id.theListView);
+        ListAdapter theAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,
+                services);
+        ListView newsfeed = (ListView) findViewById(R.id.theListView);
 
-        //newsfeed.setAdapter(theAdapter);
+        newsfeed.setAdapter(theAdapter);
 
 
 
@@ -57,7 +57,7 @@ public class newsfeed extends AppCompatActivity {
         username.setText(extras.getString("getEmail"));
 
 
-        List<String> services = new ArrayList<>();
+        //List<String> services = new ArrayList<>();
 
 
         searchbtn = (SearchView) findViewById(R.id.search);
