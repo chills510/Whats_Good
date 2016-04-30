@@ -15,6 +15,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
@@ -38,6 +39,18 @@ public class newsfeed extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_newsfeed);
+
+         //String[] services = {"Hair Cut's on Demand", "Carpet Cleaners", "Toyota Corolla For Sale", "iPhone Repair", "Ride to Long Beach",
+         //   "Landscaping for Cheap", "Couch For Sale"};
+
+        //ListAdapter theAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,
+        //        services);
+        //ListView newsfeed = (ListView) findViewById(R.id.theListView);
+
+        //newsfeed.setAdapter(theAdapter);
+
+
+
 
         Bundle extras = getIntent().getExtras();
         username = (TextView) findViewById(R.id.ProfileBtn);
